@@ -254,6 +254,15 @@ audio::-webkit-media-controls-enclosure {
 	background-color: var(--color-bg-body);
 }
 
+section a {
+    display: inline-block;
+    padding: 0.5em 1em;
+    background-color: var(--color-opposite);
+    text-transform: none;
+    margin: 0.5em 1.5em;
+    border-radius: 5px;
+}
+
 /* #playlists ::-webkit-scrollbar,
 #curated ::-webkit-scrollbar {
 }
