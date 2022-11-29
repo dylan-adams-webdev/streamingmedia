@@ -46,7 +46,7 @@ h2 {
 }
 
 h2 {
-    font-size: 1.25rem;
+	font-size: 1.25rem;
 }
 
 img {
@@ -79,7 +79,7 @@ section > a:hover {
 .scroll {
 	display: flex;
 	overflow-x: scroll;
-    margin-top: 0.5em;
+	margin-top: 0.5em;
 }
 
 /* ============================================= */
@@ -90,13 +90,13 @@ header {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-    padding-top: 58px;
+	padding-top: 58px;
 }
 
 header h1 {
-    margin-bottom: 0.75em;
-    font-weight: var(--font-weight-bold);
-    font-size: 1.25rem;
+	margin-bottom: 0.75em;
+	font-weight: var(--font-weight-bold);
+	font-size: 1.25rem;
 }
 
 header .gradient {
@@ -111,7 +111,7 @@ header h2 {
 }
 
 header p {
-    font-size: 1.25rem;
+	font-size: 1.25rem;
 }
 
 header nav {
@@ -157,6 +157,7 @@ header li:hover {
 header li:first-child a {
 	font-variant: small-caps;
 	text-transform: none;
+    font-size: 1.25rem;
 	font-weight: var(--font-weight-bold);
 	width: 50%;
 }
@@ -164,7 +165,7 @@ header li:first-child a {
 header li a {
 	width: 100%;
 	text-transform: uppercase;
-    font-size: 1rem;
+	font-size: 1rem;
 }
 
 header label {
@@ -249,8 +250,8 @@ section .scroll a {
 }
 
 section > a {
-    font-size: 0.875rem;
-    font-weight: var(--font-weight-bold);
+	font-size: 0.875rem;
+	font-weight: var(--font-weight-bold);
 }
 
 /* ============================================= */
@@ -266,9 +267,14 @@ section > a {
 }
 
 #trending h3 {
-    font-size: 1rem;
-    font-weight: var(--font-weight-bold);
-    color: var(--color-opposite);
+	padding-top: 0.25em;
+	font-size: 1rem;
+	font-weight: var(--font-weight-bold);
+	color: var(--color-opposite);
+}
+
+#trending dl {
+	padding-bottom: 0.25em;
 }
 
 #trending dl,
@@ -282,11 +288,12 @@ section > a {
 #trending dd {
 	display: inline-block;
 	margin: 0;
+    font-size: 1rem;
 }
 
 #trending dt {
 	font-style: italic;
-    font-weight: var(--font-weight-light);
+	font-weight: var(--font-weight-light);
 }
 
 #trending img {
@@ -387,13 +394,18 @@ section p {
 
 #playlists h3,
 #curated h3 {
-    font-size: 1rem;
-    font-weight: var(--font-weight-bold);
+	font-size: 1rem;
+	font-weight: var(--font-weight-bold);
 }
 
 #playlists p,
 #curated p {
-    font-size: 0.875rem;
+	font-size: 0.875rem;
+}
+
+#playlists .scroll a:hover,
+#curated .scroll a:hover {
+	background-color: var(--color-opposite);
 }
 
 /* ============================================= */
@@ -410,8 +422,8 @@ footer {
 
 footer small {
 	display: inline;
-    font-size: 0.625rem;
-    font-weight: var(--font-weight-bold);
+	font-size: 0.625rem;
+	font-weight: var(--font-weight-bold);
 }
 
 @media screen and (min-width: 834px) {
@@ -513,8 +525,8 @@ footer small {
 
 	#playlists .scroll h3,
 	#playlists .scroll p,
-    #curated .scroll h3,
-    #curated .scroll p {
+	#curated .scroll h3,
+	#curated .scroll p {
 		width: 50%;
 	}
 }
