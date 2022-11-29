@@ -4,6 +4,7 @@
 	--color-light: #fff;
 	--color-bg-scroll-highlight: #2699fb;
 	--color-element-scroll-highlight: #0f8dfb;
+	--color-element-scroll-lowlight: #010e73;
 	--color-opposite: #590742;
 	--color-bg-card-title: #c3c4c4;
 	--font-base: 'Raleway', sans-serif;
@@ -32,18 +33,20 @@ html {
 }
 
 body {
-	line-height: 1.5;
 	-webkit-font-smoothing: antialiased;
 	margin: 0 auto;
 	max-width: 375px;
 	background-color: var(--color-light);
 	font-family: var(--font-base);
-	font-size: 20px;
 }
 
 h1,
 h2 {
 	text-transform: uppercase;
+}
+
+h2 {
+    font-size: 1.25rem;
 }
 
 img {
@@ -55,20 +58,48 @@ input {
 	font: inherit;
 }
 
-/* HEADER */
+a {
+	text-decoration: none;
+	color: var(--color-light);
+}
+
+section > a {
+	display: inline-block;
+	padding: 0.5em 1em;
+	background-color: var(--color-opposite);
+	text-transform: none;
+	margin: 0.5em 1.5em;
+	border-radius: 5px;
+}
+
+section > a:hover {
+	background-color: var(--color-bg-body);
+}
+
+.scroll {
+	display: flex;
+	overflow-x: scroll;
+    margin-top: 0.5em;
+}
+
+/* ============================================= */
+/*                    HEADER                     */
+/* ============================================= */
 
 header {
-	background: red;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+    padding-top: 58px;
 }
 
 header h1 {
-	margin-top: 58px;
+    margin-bottom: 0.75em;
+    font-weight: var(--font-weight-bold);
+    font-size: 1.25rem;
 }
 
-.gradient {
+header .gradient {
 	background: linear-gradient(90deg, #1d24e7, #000);
 	color: var(--color-light);
 	padding: 0.25em 0.75em;
@@ -79,7 +110,11 @@ header h2 {
 	position: absolute;
 }
 
-nav {
+header p {
+    font-size: 1.25rem;
+}
+
+header nav {
 	order: -2;
 	z-index: 2;
 	position: absolute;
@@ -88,7 +123,7 @@ nav {
 	max-width: 375px;
 }
 
-ul {
+header ul {
 	position: absolute;
 	top: 0;
 	z-index: -1;
@@ -102,36 +137,44 @@ ul {
 	padding: 0;
 }
 
-li {
+header li {
 	width: 100%;
 	height: 58px;
-	padding: 0;
-	margin: 0;
+	margin: 0 0 1em 0;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 }
 
-li:first-child a {
+header li img {
+	margin: auto;
+}
+
+header li:hover {
+	background-color: var(--color-opposite);
+}
+
+header li:first-child a {
 	font-variant: small-caps;
 	text-transform: none;
 	font-weight: var(--font-weight-bold);
+	width: 50%;
 }
 
-a {
-	text-decoration: none;
-	color: var(--color-light);
+header li a {
+	width: 100%;
 	text-transform: uppercase;
+    font-size: 1rem;
 }
 
-label {
+header label {
 	cursor: pointer;
 	display: inline-block;
 	padding: 28px 20px;
 	position: relative;
 	user-select: none;
 }
-label span {
+header label span {
 	background-color: #ffffff;
 	display: block;
 	height: 2px;
@@ -139,8 +182,9 @@ label span {
 	transition: background-color 0.2s ease-out;
 	width: 18px;
 }
-label span:before,
-label span:after {
+
+header label span:before,
+header label span:after {
 	background: #ffffff;
 	content: '';
 	display: block;
@@ -149,49 +193,69 @@ label span:after {
 	transition: all 0.2s ease-out;
 	width: 100%;
 }
-label span:before {
+
+header label span:before {
 	top: 5px;
 }
-label span:after {
+
+header label span:after {
 	top: -5px;
 }
-input {
+
+header input {
 	display: none;
 }
-input:checked ~ ul {
+
+header input:checked ~ ul {
 	max-height: 500px;
 }
-input:checked ~ label span {
+
+header input:checked ~ label span {
 	background: transparent;
 }
-input:checked ~ label span:before {
+
+header input:checked ~ label span:before {
 	transform: rotate(-45deg);
 }
-input:checked ~ label span:after {
+
+header input:checked ~ label span:after {
 	transform: rotate(45deg);
 }
-input:checked ~ label:not(.steps) span:before,
-input:checked ~ label:not(.steps) span:after {
+
+header input:checked ~ label:not(.steps) span:before,
+header input:checked ~ label:not(.steps) span:after {
 	top: 0;
 }
 
-/* MAIN */
+/* ============================================= */
+/*                     MAIN                      */
+/* ============================================= */
 
-/* TRENDING SONGS */
-
-#trending {
-	padding-top: 1em;
+main > section {
+	padding-top: 1.5em;
 	color: var(--color-opposite);
+	background-color: var(--color-light);
 }
 
-#trending h2 {
+main > section h2 {
 	margin-left: 0.5em;
 }
 
-.scroll {
-	display: flex;
-	overflow-x: scroll;
+section .scroll a {
+	margin: 0.5em;
+	min-width: 167px;
+	text-align: center;
+	padding: 0.5em;
 }
+
+section > a {
+    font-size: 0.875rem;
+    font-weight: var(--font-weight-bold);
+}
+
+/* ============================================= */
+/*                   TRENDING                    */
+/* ============================================= */
 
 #trending section {
 	margin: 0.5em;
@@ -199,6 +263,12 @@ input:checked ~ label:not(.steps) span:after {
 	flex-direction: column;
 	position: relative;
 	min-width: 300px;
+}
+
+#trending h3 {
+    font-size: 1rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-opposite);
 }
 
 #trending dl,
@@ -216,6 +286,7 @@ input:checked ~ label:not(.steps) span:after {
 
 #trending dt {
 	font-style: italic;
+    font-weight: var(--font-weight-light);
 }
 
 #trending img {
@@ -230,12 +301,13 @@ input:checked ~ label:not(.steps) span:after {
 	margin-top: calc(50% - 40px);
 }
 
-audio::-webkit-media-controls-play-button,
-audio::-webkit-media-controls-mute-button {
+#trending audio::-webkit-media-controls-play-button,
+#trending audio::-webkit-media-controls-mute-button {
 	border-radius: 50%;
 	background-color: var(--color-light);
 }
-audio::-webkit-media-controls-enclosure {
+
+#trending audio::-webkit-media-controls-enclosure {
 	background: rgba(255, 255, 255, 0.5);
 }
 
@@ -246,46 +318,203 @@ audio::-webkit-media-controls-enclosure {
 #trending .scroll::-webkit-scrollbar-track {
 	box-shadow: inset 0 0 15px var(--color-opposite);
 }
+
 #trending .scroll::-webkit-scrollbar-thumb {
 	background: var(--color-opposite);
 	border-radius: 5px;
 }
+
 #trending ::-webkit-scrollbar-thumb:hover {
 	background-color: var(--color-bg-body);
 }
 
-section a {
-    display: inline-block;
-    padding: 0.5em 1em;
-    background-color: var(--color-opposite);
-    text-transform: none;
-    margin: 0.5em 1.5em;
-    border-radius: 5px;
+/* ============================================= */
+/*                  PLAYLISTS                    */
+/* ============================================= */
+
+#playlists .scroll {
+	background-color: var(--color-bg-scroll-highlight);
 }
 
-/* #playlists ::-webkit-scrollbar,
-#curated ::-webkit-scrollbar {
+#playlists .scroll a {
+	background-color: var(--color-element-scroll-highlight);
 }
+
+#playlists img {
+	margin: 0 auto;
+}
+
+section h3,
+section p {
+	color: var(--color-light);
+}
+
+#playlists ::-webkit-scrollbar,
+#curated ::-webkit-scrollbar {
+	width: 15px;
+}
+
 #playlists ::-webkit-scrollbar-track,
 #curated ::-webkit-scrollbar-track {
+	box-shadow: inset 0 0 15px var(--color-bg-body);
 }
+
 #playlists ::-webkit-scrollbar-thumb,
 #curated ::-webkit-scrollbar-thumb {
+	background-color: var(--color-bg-body);
+	border-radius: 5px;
 }
 #playlists ::-webkit-scrollbar-thumb:hover,
 #curated ::-webkit-scrollbar-thumb:hover {
-} */
+	background-color: var(--color-light);
+}
+
+/* ============================================= */
+/*                    CURATED                    */
+/* ============================================= */
+
+#curated .scroll {
+	background-color: var(--color-bg-inner);
+}
+
+#curated .scroll a {
+	background-color: var(--color-element-scroll-lowlight);
+}
+
+/* ============================================= */
+/*             PLAYLISTS AND CURATED             */
+/* ============================================= */
+
+#playlists h3,
+#curated h3 {
+    font-size: 1rem;
+    font-weight: var(--font-weight-bold);
+}
+
+#playlists p,
+#curated p {
+    font-size: 0.875rem;
+}
+
+/* ============================================= */
+/*                   FOOTER                      */
+/* ============================================= */
+
+footer {
+	padding: 1em 0 1em 0;
+	background-color: var(--color-light);
+	color: var(--color-opposite);
+	width: 100%;
+	text-align: center;
+}
+
+footer small {
+	display: inline;
+    font-size: 0.625rem;
+    font-weight: var(--font-weight-bold);
+}
 
 @media screen and (min-width: 834px) {
-	ul {
+	body {
+		margin: 0 auto;
+		max-width: 875px;
+		background-color: var(--color-light);
+		font-family: var(--font-base);
+		font-size: 20px;
+	}
+
+	header {
+		line-height: 1;
+	}
+
+	header .gradient {
+		background: linear-gradient(90deg, #1d24e7, #000);
+		color: var(--color-light);
+		padding: 1em 0.75em;
+	}
+
+	header nav {
+		max-width: 875px;
+	}
+
+	header li:first-child a {
+		width: 100%;
+	}
+
+	header ul {
 		overflow: visible;
 		position: absolute;
 		top: 0;
-		display: grid;
-		grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
 	}
-	label span,
-	input {
+
+	header li {
+		margin: 0;
+	}
+
+	header label span,
+	header input {
 		display: none;
+	}
+
+	main {
+		overflow: hidden;
+		display: grid;
+		grid-template-columns: calc(875px / 2) calc(875px / 2);
+		grid-template-areas: 'trending trending' 'playlists curated';
+	}
+
+	main section {
+		display: flex;
+		flex-direction: column;
+	}
+
+	section > a {
+		padding: 0.5em 1em;
+		background-color: var(--color-opposite);
+		text-transform: none;
+		margin: 0.5em 1.5em;
+		align-self: flex-end;
+		border-radius: 5px;
+	}
+
+	section a:hover {
+		background-color: var(--color-bg-body);
+	}
+
+	#trending {
+		grid-area: trending;
+	}
+
+	#playlists {
+		grid-area: playlists;
+	}
+
+	#curated {
+		grid-area: curated;
+	}
+
+	#playlists .scroll,
+	#curated .scroll {
+		flex-direction: column;
+		height: 500px;
+		overflow-x: hidden;
+	}
+
+	.scroll a {
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+		max-height: 150px;
+		align-items: center;
+	}
+
+	#playlists .scroll h3,
+	#playlists .scroll p,
+    #curated .scroll h3,
+    #curated .scroll p {
+		width: 50%;
 	}
 }
